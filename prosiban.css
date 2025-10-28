@@ -1,0 +1,143 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+}
+
+#layout {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.bar {
+    width: 100%;
+    max-width: 300px;
+    background: linear-gradient(135deg, #6c63ff, #5948d7);
+    color: white;
+    padding: 25px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.bar input, .bar button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 6px;
+}
+
+.bar input {
+    outline: none;
+}
+
+.bar button {
+    background-color: #ffcc00;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bar button:hover {
+    background-color: #ffd633;
+}
+
+.zone-form {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.Team-block {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.Team-block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.Team-block h3 {
+    color: #6c63ff;
+}
+
+.Team-block input, .Team-block select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#submitBTn {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submitBTn:hover {
+    background-color: #5948d7;
+}
+
+#result {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Tableau des résultats */
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-table th, .result-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.result-table th {
+    background-color: #6c63ff;
+    color: white;
+}
+
+.progress-bar {
+    height: 12px;
+    border-radius: 6px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #6c63ff;
+}
+
+@media screen and (max-width: 768px) {
+    #layout {
+        flex-direction: column;
+        height: auto;
+    }
+    .bar {
+        width: 100%;
+        text-align: center;
+    }
+}
