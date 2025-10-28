@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prosiban.css">
+    <title>PROSIBAN</title>
+</head>
+<body>
+    <div id="layout">
+        <div class="bar">
+            <h1 class="logo">PROSIBAN</h1>
+            <p>Bienvenue au calculateur de points du programme</p>
+            <h2>Créer des équipes de binômes</h2>
+
+            <label for="team">Nombre de binômes :</label>
+            <input type="number" min="1" id="team" max="10" required>
+            <button onclick="generateForm()">Générer le formulaire</button>
+        </div>
+
+        <div class="zone-form">
+            <form id="formEquip" onsubmit="processResult(event)">
+                <div id="espaceForm"></div>
+                <button type="submit" id="submitBTn" style="display: none;">Calculer le résultat</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="prosiban.js"></script>
+</body>
+</html>
