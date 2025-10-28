@@ -241,7 +241,7 @@ function processResult(event) {
             let inscriptionPoints = 200;
             // Bonus si ≥60 PV
             if (inscrPV_B1 >= 60 || inscrPV_B2 >= 60) {
-                inscriptionPoints += 15;
+                inscriptionPoints += 100;
             }
             score += inscriptionPoints;
             details.inscriptions = inscriptionPoints;
