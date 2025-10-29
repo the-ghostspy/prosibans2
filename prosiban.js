@@ -231,27 +231,27 @@ function processResult(event) {
             // Aucun ne respecte et aucun autre produit → pénalité
             score -= 5;
             details.targets = -5;
-        }
+        }       // 4. Inscriptions - Avec vérification PV ≥ 30
+const inscrRespect_B1 = (inscr_B1 === "yes") && (inscrPV_B1 >= 30);
+const inscrRespect_B2 = (inscr_B2 === "yes") && (inscrPV_B2 >= 30);
 
-        // 4. Inscriptions - Avec vérification PV ≥ 30
-        const inscrRespect_B1 = (inscr_B1 === "yes") && (inscrPV_B1 >= 30);
-        const inscrRespect_B2 = (inscr_B2 === "yes") && (inscrPV_B2 >= 30);
-
-        if (inscrRespect_B1 && inscrRespect_B2) {
-            let inscriptionPoints = 200;
-            // Bonus si ≥60 PV
-            if (inscrPV_B1 >= 60 || inscrPV_B2 >= 60) {
-                inscriptionPoints += 100;
-            }
-            score += inscriptionPoints;
-            details.inscriptions = inscriptionPoints;
-        } else if (inscrRespect_B1 || inscrRespect_B2) {
-            score += 25;
-            details.inscriptions = 25;
-        } else {
-            score -= 70;
-            details.inscriptions = -70;
-        }
+if (inscrRespect_B1 && inscrRespect_B2) {
+    let inscriptionPoints = 200;
+    // Bonus si ≥60 PV = 200 + PV de l'inscription ≥60
+    if (inscrPV_B1 >= 60) {
+        inscriptionPoints += inscrPV_B1;
+    }
+    if (inscrPV_B2 >= 60) {
+        inscriptionPoints += inscrPV_B2;
+    }
+    score += inscriptionPoints;
+    details.inscriptions = inscriptionPoints;
+} else if (inscrRespect_B1 || inscrRespect_B2) {
+    score += 25;
+    details.inscriptions = 25;
+} else {
+    score -= 70;
+    details.inscriptions = -70;  }
 
         // 5. Formation
         if (form_B1 && form_B2) {
